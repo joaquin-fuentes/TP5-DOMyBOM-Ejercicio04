@@ -1,29 +1,35 @@
-function updateClock() {
-    let now = new Date();
+function actualizarReloj() {
+    let ahora = new Date();
 
-    let day = now.getDate();
-    let month = now.getMonth() + 1;
+    let dia = ahora.getDate();
+    let mes = ahora.getMonth() + 1;
+    let año = ahora.getFullYear();
     let nombreMes
-    let year = now.getFullYear();
+    let ampm
+    let horas = ahora.getHours();
+    let minutos = ahora.getMinutes();
+    let segundos = ahora.getSeconds();
 
-    let hours = now.getHours();
-    let minutes = now.getMinutes();
-    let seconds = now.getSeconds();
-
-    let daysOfWeek = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
-    let dayOfWeek = daysOfWeek[now.getDay()];
+    let diasDeLaSemana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+    let diaDeLaSemana = diasDeLaSemana[ahora.getDay()];
 
     // Formatea los valores para que se muestren con un 0 delante si son menores que 10
-    if (hours < 10) {
-        hours = "0" + hours;
+    if (horas < 10) {
+        horas = "0" + horas;
     }
-    if (minutes < 10) {
-        minutes = "0" + minutes;
+    if (minutos < 10) {
+        minutos = "0" + minutos;
     }
-    if (seconds < 10) {
-        seconds = "0" + seconds;
+    if (segundos < 10) {
+        segundos = "0" + segundos;
     }
-    switch (month) {
+    if (horas >= 12 && minutos >= 0 && segundos > 0){
+        ampm = "PM"
+    }  else {
+        ampm = "AM"
+    }
+
+    switch (mes) {
         case 1:
             nombreMes = "Enero"
            break;
@@ -33,31 +39,31 @@ function updateClock() {
         case 3:
             nombreMes = "Marzo"
            break;
-        case 3:
+        case 4:
             nombreMes = "Abril"
            break;
-        case 3:
+        case 5:
             nombreMes = "Mayo"
            break;
-        case 3:
+        case 6:
             nombreMes = "Junio"
            break;
-        case 3:
+        case 7:
             nombreMes = "Julio"
            break;
-        case 3:
+        case 8:
             nombreMes = "Agosto"
            break;
-        case 3:
+        case 9:
             nombreMes = "Septiembre"
            break;
-        case 3:
+        case 10:
             nombreMes = "Octubre"
            break;
-        case 3:
+        case 11:
             nombreMes = "Noviembre"
            break;
-        case 3:
+        case 12:
             nombreMes = "Diciembre"
            break;
         default:
@@ -65,16 +71,19 @@ function updateClock() {
         break;
     }
 
-    // Actualiza el contenido HTML de los elementos correspondientes
-    document.getElementById("numeroDia").innerHTML = day;
-    document.getElementById("nombreMes").innerHTML = nombreMes;
-    document.getElementById("año").innerHTML = year;
 
-    document.getElementById("horas").innerHTML = hours;
-    document.getElementById("minutos").innerHTML = minutes;
-    document.getElementById("segundos").innerHTML = seconds;
-    document.getElementById("nombreDia").innerHTML = dayOfWeek;
+    document.getElementById("numeroDia").innerHTML = dia;
+    document.getElementById("nombreMes").innerHTML = nombreMes;
+    document.getElementById("año").innerHTML = año;
+    document.getElementById("am-pm").innerHTML = ampm;
+    document.getElementById("horas").innerHTML = horas;
+    document.getElementById("minutos").innerHTML = minutos;
+    document.getElementById("segundos").innerHTML = segundos;
+    document.getElementById("nombreDia").innerHTML = diaDeLaSemana;
+    let dosPuntos = document.querySelectorAll("#dosPuntos");
+    dosPuntos[0].innerHTML = ":";
+    dosPuntos[1].innerHTML = ":";
 }
 
 
-setInterval(updateClock, 1000);
+setInterval(actualizarReloj, 1000);
