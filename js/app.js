@@ -1,6 +1,8 @@
 function actualizarReloj() {
-    let ahora = new Date();
 
+    let reloj = document.querySelector("#reloj");
+
+    let ahora = new Date();
     let dia = ahora.getDate();
     let mes = ahora.getMonth() + 1;
     let año = ahora.getFullYear();
@@ -71,18 +73,40 @@ function actualizarReloj() {
         break;
     }
 
+    reloj.innerHTML = `
+                <div class=" bg-dark text-white bg-opacity-50 p-2 mb-2">
+                    <p class="fs-5 fw-bold m-0">
+                        <span>${diaDeLaSemana}  </span>
+                        <span>${dia}</span>
+                        <span> de </span>
+                        <span>${nombreMes}  </span>
+                        <span> del </span>
+                        <span>${año}  </span>
+                    </p>
+                </div>
+                <div class=" bg-dark text-white bg-opacity-50 p-2 mt-2">
+                   <aside class="d-flex justify-content-center">
+                     <div class="d-flex flex-column justify-content-center">
+                        <p class=" nroGrande my-auto">${horas}</p>
+                     </div>
+                     <div class="d-flex flex-column justify-content-center">
+                        <p class=" fs-1 mx-2  my-auto " >:</p>
+                     </div>
+                     <div class="d-flex flex-column justify-content-center">
+                        <p class=" nroGrande my-auto">${minutos}</p>
+                     </div>
+                     <div class="d-flex flex-column justify-content-center">
+                        <p class=" fs-1 mx-2  my-auto ">:</p>
+                     </div>
+                     <div class="d-flex flex-column justify-content-center">
+                        <p class="fs-6 m-0 fw-bold ">${ampm}</p>
+                        <p class="fs-6 m-0 fw-bold ">${segundos}</p>
+                     </div>
+                   </aside>
+                </div>
+                `
 
-    document.getElementById("numeroDia").innerHTML = dia;
-    document.getElementById("nombreMes").innerHTML = nombreMes;
-    document.getElementById("año").innerHTML = año;
-    document.getElementById("am-pm").innerHTML = ampm;
-    document.getElementById("horas").innerHTML = horas;
-    document.getElementById("minutos").innerHTML = minutos;
-    document.getElementById("segundos").innerHTML = segundos;
-    document.getElementById("nombreDia").innerHTML = diaDeLaSemana;
-    let dosPuntos = document.querySelectorAll("#dosPuntos");
-    dosPuntos[0].innerHTML = ":";
-    dosPuntos[1].innerHTML = ":";
+
 }
 
 
