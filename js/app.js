@@ -6,8 +6,8 @@ function actualizarReloj() {
     let dia = ahora.getDate();
     let mes = ahora.getMonth() + 1;
     let año = ahora.getFullYear();
-    let nombreMes
-    let ampm
+    let nombreMes;
+    let ampm;
     let horas = ahora.getHours();
     let minutos = ahora.getMinutes();
     let segundos = ahora.getSeconds();
@@ -26,50 +26,50 @@ function actualizarReloj() {
         segundos = "0" + segundos;
     }
     if (horas >= 12 && minutos >= 0 && segundos > 0){
-        ampm = "PM"
+        ampm = "PM";
     }  else {
-        ampm = "AM"
+        ampm = "AM";
     }
 
     switch (mes) {
         case 1:
-            nombreMes = "Enero"
+            nombreMes = "Enero";
            break;
         case 2:
-            nombreMes = "Febrero"
+            nombreMes = "Febrero";
            break;
         case 3:
-            nombreMes = "Marzo"
+            nombreMes = "Marzo";
            break;
         case 4:
-            nombreMes = "Abril"
+            nombreMes = "Abril";
            break;
         case 5:
-            nombreMes = "Mayo"
+            nombreMes = "Mayo";
            break;
         case 6:
-            nombreMes = "Junio"
+            nombreMes = "Junio";
            break;
         case 7:
-            nombreMes = "Julio"
+            nombreMes = "Julio";
            break;
         case 8:
-            nombreMes = "Agosto"
+            nombreMes = "Agosto";
            break;
         case 9:
-            nombreMes = "Septiembre"
+            nombreMes = "Septiembre";
            break;
         case 10:
-            nombreMes = "Octubre"
+            nombreMes = "Octubre";
            break;
         case 11:
-            nombreMes = "Noviembre"
+            nombreMes = "Noviembre";
            break;
         case 12:
-            nombreMes = "Diciembre"
+            nombreMes = "Diciembre";
            break;
         default:
-            alert("El numero del mes no coincide con ningun nomre de mes válido")
+            alert("El numero del mes no coincide con ningun nomre de mes válido");
         break;
     }
 
@@ -104,9 +104,7 @@ function actualizarReloj() {
                      </div>
                    </aside>
                 </div>
-                `
-
-
+                `;
 }
 
 
