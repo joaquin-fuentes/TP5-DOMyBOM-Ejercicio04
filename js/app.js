@@ -74,7 +74,7 @@ function actualizarReloj() {
     }
 
     reloj.innerHTML = `
-                <div class=" bg-dark text-white bg-opacity-50 p-2 mb-2">
+                <div class=" bg-dark text-white bg-opacity-75 p-2 mb-2">
                     <p class="fs-5 fw-bold m-0">
                         <span>${diaDeLaSemana}  </span>
                         <span>${dia}</span>
@@ -84,7 +84,7 @@ function actualizarReloj() {
                         <span>${año}  </span>
                     </p>
                 </div>
-                <div class=" bg-dark text-white bg-opacity-50 p-2 mt-2">
+                <div class=" bg-dark text-white bg-opacity-75 p-2 mt-2">
                    <aside class="d-flex justify-content-center">
                      <div class="d-flex flex-column justify-content-center">
                         <p class=" nroGrande my-auto">${horas}</p>
