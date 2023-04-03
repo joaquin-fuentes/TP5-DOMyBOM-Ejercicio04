@@ -1,3 +1,8 @@
+@import url('https://fonts.cdnfonts.com/css/lcd');
+
+body {
+  font-family: LCD2, system-ui;
+}
 body::before {
     content: "";
     background-image: url(../img/bg1.avif);
