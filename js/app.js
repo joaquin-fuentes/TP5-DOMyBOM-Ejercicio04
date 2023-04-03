@@ -4,9 +4,8 @@ function actualizarReloj() {
 
     let ahora = new Date();
     let dia = ahora.getDate();
-    let mes = ahora.getMonth() + 1;
+    let mes = ahora.getMonth();
     let año = ahora.getFullYear();
-    let nombreMes;
     let ampm;
     let horas = ahora.getHours();
     let minutos = ahora.getMinutes();
@@ -14,6 +13,9 @@ function actualizarReloj() {
 
     let diasDeLaSemana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
     let diaDeLaSemana = diasDeLaSemana[ahora.getDay()];
+
+    let mesesDelAño = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto","Septiembre", "Octubre", "Noviembre","Diciembre"]
+    let mesDelAño = mesesDelAño[mes]
 
     // Formatea los valores para que se muestren con un 0 delante si son menores que 10
     if (horas < 10) {
@@ -31,47 +33,6 @@ function actualizarReloj() {
         ampm = "AM";
     }
 
-    switch (mes) {
-        case 1:
-            nombreMes = "Enero";
-           break;
-        case 2:
-            nombreMes = "Febrero";
-           break;
-        case 3:
-            nombreMes = "Marzo";
-           break;
-        case 4:
-            nombreMes = "Abril";
-           break;
-        case 5:
-            nombreMes = "Mayo";
-           break;
-        case 6:
-            nombreMes = "Junio";
-           break;
-        case 7:
-            nombreMes = "Julio";
-           break;
-        case 8:
-            nombreMes = "Agosto";
-           break;
-        case 9:
-            nombreMes = "Septiembre";
-           break;
-        case 10:
-            nombreMes = "Octubre";
-           break;
-        case 11:
-            nombreMes = "Noviembre";
-           break;
-        case 12:
-            nombreMes = "Diciembre";
-           break;
-        default:
-            alert("El numero del mes no coincide con ningun nomre de mes válido");
-        break;
-    }
 
     reloj.innerHTML = `
                 <div class=" bg-dark text-white bg-opacity-75 p-2 mb-2">
@@ -79,7 +40,7 @@ function actualizarReloj() {
                         <span>${diaDeLaSemana}  </span>
                         <span>${dia}</span>
                         <span> de </span>
-                        <span>${nombreMes}  </span>
+                        <span>${mesDelAño}  </span>
                         <span> del </span>
                         <span>${año}  </span>
                     </p>
